@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarciano Martim de Sousa — AI Product Builder & Full-Stack Web Developer</title>
+    <title>Tarciano Martim de Sousa — AI Product Builder &amp; Full-Stack Web Developer</title>
     <meta
       name="description"
       content="Portfólio executivo de Tarciano Martim de Sousa — AI Product Builder, Rapid Prototyper e Desenvolvedor Web Full-Stack em São Paulo, Brasil."
     />
-    <meta property="og:title" content="Tarciano Martim de Sousa — AI Product Builder & Full-Stack Web Developer" />
+    <meta property="og:title" content="Tarciano Martim de Sousa — AI Product Builder &amp; Full-Stack Web Developer" />
     <meta
       property="og:description"
       content="Produtos digitais publicados em Finanças, Saúde, Mobilidade e Mídia: DinhEuro, NutrinK, PlayTelas, Consuderme e Estrada Pay."
@@ -21,10 +21,1385 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      if (window.tailwind) {
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              fontFamily: {
+                display: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                sans: ['"DM Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+              },
+            },
+          },
+        };
+      }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      html,
+      body {
+        background-color: #090d16;
+        color: #f1f5f9;
+        font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+        scroll-behavior: smooth;
+        margin: 0;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-display {
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      }
+      .font-mono {
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+      }
+      .tabular-nums {
+        font-variant-numeric: tabular-nums;
+      }
+      .text-balance {
+        text-wrap: balance;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-[#090d16] text-slate-100 antialiased selection:bg-emerald-500/25 selection:text-emerald-200">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="min-h-screen bg-[#090d16] text-slate-100 antialiased selection:bg-emerald-500/25 selection:text-emerald-200">
+    <!-- Top Bar -->
+    <header class="sticky top-0 z-40 border-b border-white/[0.08] bg-[#090d16]/95 backdrop-blur-md">
+      <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between gap-4 px-4 sm:gap-8 sm:px-8">
+        <a
+          href="#topo"
+          class="font-display text-sm font-bold tracking-tight text-white whitespace-nowrap shrink-0 sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+        >
+          Tarciano Martim de Sousa
+        </a>
+
+        <nav aria-label="Navegação principal" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-400">
+          <a href="#resumo" data-i18n="nav.summary" class="whitespace-nowrap shrink-0 transition-colors duration-150 hover:text-white rounded">
+            Resumo
+          </a>
+          <a href="#produtos" data-i18n="nav.products" class="whitespace-nowrap shrink-0 transition-colors duration-150 hover:text-white rounded">
+            Produtos
+          </a>
+          <a href="#certificacoes" data-i18n="nav.certifications" class="whitespace-nowrap shrink-0 transition-colors duration-150 hover:text-white rounded">
+            Certificações
+          </a>
+          <a href="#contato" data-i18n="nav.contact" class="whitespace-nowrap shrink-0 transition-colors duration-150 hover:text-white rounded">
+            Contato
+          </a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div
+            id="lang-switcher"
+            role="group"
+            aria-label="Language selector"
+            class="flex items-center rounded-lg border border-white/[0.08] bg-[#111827] p-0.5"
+          >
+            <button
+              type="button"
+              data-lang="pt"
+              aria-pressed="true"
+              class="lang-btn min-h-[32px] px-2.5 py-1 text-xs font-semibold tracking-wide rounded-md transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer bg-blue-600 text-white"
+            >
+              PT
+            </button>
+            <button
+              type="button"
+              data-lang="en"
+              aria-pressed="false"
+              class="lang-btn min-h-[32px] px-2.5 py-1 text-xs font-semibold tracking-wide rounded-md transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer text-slate-400 hover:text-slate-100"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              data-lang="es"
+              aria-pressed="false"
+              class="lang-btn min-h-[32px] px-2.5 py-1 text-xs font-semibold tracking-wide rounded-md transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer text-slate-400 hover:text-slate-100"
+            >
+              ES
+            </button>
+          </div>
+
+          <a
+            href="mailto:tarcianosousa484@gmail.com"
+            title="tarcianosousa484@gmail.com"
+            aria-label="E-mail: tarcianosousa484@gmail.com"
+            class="inline-flex h-9 w-9 sm:w-auto items-center justify-center gap-2 rounded-lg border border-white/[0.1] bg-[#111827] sm:px-3.5 text-xs font-medium text-slate-200 transition-colors duration-150 hover:border-white/25 hover:text-white whitespace-nowrap shrink-0"
+          >
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-blue-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <span class="hidden sm:inline" data-i18n="header.emailLabel">E-mail</span>
+          </a>
+
+          <a
+            href="https://wa.me/5511963387266"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="+55 11 96338-7266"
+            aria-label="WhatsApp: +55 11 96338-7266"
+            class="inline-flex h-9 w-9 sm:w-auto items-center justify-center gap-2 rounded-lg bg-emerald-500 sm:px-3.5 text-xs font-semibold text-slate-950 transition-colors duration-150 hover:bg-emerald-400 whitespace-nowrap shrink-0"
+          >
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+            </svg>
+            <span class="hidden sm:inline" data-i18n="header.whatsappLabel">WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="topo">
+      <!-- Hero Split Section -->
+      <section class="mx-auto max-w-[1200px] px-4 pt-12 pb-12 sm:px-8 lg:pt-20 lg:pb-16">
+        <div class="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12 lg:gap-10">
+          <!-- Left Column -->
+          <div class="flex flex-col justify-between lg:col-span-7">
+            <div>
+              <p data-i18n="hero.roleLocation" class="text-sm font-medium text-emerald-400 tracking-wide">
+                AI Product Builder &amp; Full-Stack Web Developer · São Paulo, SP, Brasil
+              </p>
+
+              <h1
+                data-i18n="hero.headline"
+                class="mt-4 font-display font-bold tracking-tight text-white text-balance leading-[1.1]"
+                style="font-size: clamp(2.15rem, 4vw, 3.35rem)"
+              >
+                Produtos digitais completos, da concepção estratégica ao lançamento comercial.
+              </h1>
+
+              <p data-i18n="hero.subheadline" class="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+                Rapid Prototyper e Desenvolvedor Web Full-Stack especializado em arquiteturas PWA, plataformas SaaS, dashboards analíticos, automação de dados e inteligência aplicada a negócios.
+              </p>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-3.5 pt-2">
+              <a
+                href="#produtos"
+                class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors duration-150 hover:bg-emerald-400 whitespace-nowrap shrink-0"
+              >
+                <span data-i18n="hero.primaryCta">Explorar Produtos Publicados</span>
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </a>
+
+              <a
+                href="https://wa.me/5511963387266"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg border border-blue-500/40 bg-blue-600/15 px-5 py-2.5 text-sm font-semibold text-blue-200 transition-colors duration-150 hover:border-blue-400 hover:bg-blue-600/25 whitespace-nowrap shrink-0"
+              >
+                <svg viewBox="0 0 24 24" class="h-4 w-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                </svg>
+                <span data-i18n="hero.secondaryCta">Conversar no WhatsApp</span>
+              </a>
+
+              <a
+                href="mailto:tarcianosousa484@gmail.com"
+                class="inline-flex min-h-[44px] items-center px-2 text-sm font-medium text-slate-300 transition-colors duration-150 hover:text-white underline decoration-white/20 underline-offset-4 hover:decoration-emerald-400"
+              >
+                tarcianosousa484@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Production Portfolio Directory -->
+          <div class="lg:col-span-5">
+            <div class="flex h-full flex-col justify-between rounded-xl border border-white/[0.08] bg-[#111827] p-6">
+              <div>
+                <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
+                  <h2 data-i18n="hero.panelHeading" class="font-display text-base font-semibold text-white">Portfólio em Produção</h2>
+                  <span class="font-mono text-xs tabular-nums text-emerald-400">05 / 05</span>
+                </div>
+                <p data-i18n="hero.panelCaption" class="mt-3 text-sm leading-relaxed text-slate-400">
+                  Ecossistema ativo de aplicações próprias publicadas para usuários reais nos mercados financeiro, clínico, mobilidade e entretenimento.
+                </p>
+              </div>
+              <ul id="hero-product-index" class="mt-5 divide-y divide-white/[0.06]"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full-Width 4-Column KPI Strip -->
+        <div id="hero-kpis" class="mt-10 grid grid-cols-2 overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.08] gap-px lg:grid-cols-4"></div>
+      </section>
+
+      <!-- Executive Summary & Core Competencies -->
+      <section id="resumo" class="border-t border-white/[0.08] py-16 lg:py-20">
+        <div class="mx-auto max-w-[1200px] px-4 sm:px-8">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+            <div class="lg:col-span-5">
+              <p data-i18n="summary.eyebrow" class="text-xs font-semibold uppercase tracking-widest text-emerald-400">
+                Resumo Executivo
+              </p>
+              <h2 data-i18n="summary.heading" class="mt-3 font-display text-2xl font-bold tracking-tight text-white text-balance sm:text-3xl">
+                Engenharia de produto orientada a entrega real e validação comercial.
+              </h2>
+            </div>
+
+            <div class="space-y-4 lg:col-span-7">
+              <p data-i18n="summary.lead" class="text-base font-medium leading-relaxed text-slate-200 sm:text-lg"></p>
+              <p data-i18n="summary.body" class="text-sm leading-relaxed text-slate-400 sm:text-base"></p>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <h3 data-i18n="summary.competenciesHeading" class="font-display text-sm font-semibold uppercase tracking-wider text-slate-300">
+              Competências Centrais
+            </h3>
+            <div
+              id="competencies-grid"
+              class="mt-4 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.08] sm:grid-cols-2 lg:grid-cols-3"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Published Products Showcase -->
+      <section id="produtos" class="border-t border-white/[0.08] py-16 lg:py-20">
+        <div class="mx-auto max-w-[1200px] px-4 sm:px-8">
+          <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div class="max-w-2xl">
+              <p data-i18n="showcase.eyebrow" class="text-xs font-semibold uppercase tracking-widest text-emerald-400">
+                Vitrine de Produtos Publicados
+              </p>
+              <h2 data-i18n="showcase.heading" class="mt-3 font-display text-2xl font-bold tracking-tight text-white text-balance sm:text-3xl">
+                Sistemas em operação desenvolvidos de ponta a ponta.
+              </h2>
+              <p data-i18n="showcase.lead" class="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base"></p>
+            </div>
+
+            <div
+              id="category-filters"
+              role="tablist"
+              aria-label="Filtros de categoria"
+              class="flex flex-wrap items-center gap-1.5 rounded-lg border border-white/[0.08] bg-[#111827] p-1 self-start lg:self-end"
+            ></div>
+          </div>
+
+          <div id="projects-grid" class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2"></div>
+        </div>
+      </section>
+
+      <!-- Technical Certifications & Education -->
+      <section id="certificacoes" class="border-t border-white/[0.08] py-16 lg:py-20">
+        <div class="mx-auto max-w-[1200px] px-4 sm:px-8">
+          <div class="max-w-2xl">
+            <p data-i18n="certifications.eyebrow" class="text-xs font-semibold uppercase tracking-widest text-blue-400">
+              Certificações Técnicas &amp; Formação
+            </p>
+            <h2 data-i18n="certifications.heading" class="mt-3 font-display text-2xl font-bold tracking-tight text-white text-balance sm:text-3xl"></h2>
+            <p data-i18n="certifications.lead" class="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base"></p>
+          </div>
+
+          <div
+            id="certifications-list"
+            class="mt-8 overflow-hidden rounded-xl border border-white/[0.08] bg-[#111827] divide-y divide-white/[0.07]"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Direct Contact & White-Label Footer -->
+      <footer id="contato" class="border-t border-white/[0.08] bg-[#070a12] py-16">
+        <div class="mx-auto max-w-[1200px] px-4 sm:px-8">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
+            <div class="lg:col-span-6">
+              <p data-i18n="contact.eyebrow" class="text-xs font-semibold uppercase tracking-widest text-emerald-400">
+                Contato Direto
+              </p>
+              <h2 data-i18n="contact.heading" class="mt-3 font-display text-2xl font-bold tracking-tight text-white text-balance sm:text-3xl"></h2>
+              <p data-i18n="contact.lead" class="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base"></p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-6">
+              <a
+                href="https://wa.me/5511963387266"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex flex-col justify-between rounded-xl border border-emerald-500/25 bg-[#111827] p-5 transition-colors duration-150 hover:border-emerald-400/60"
+              >
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span data-i18n="contact.whatsappCardTitle" class="text-xs font-medium text-emerald-400">
+                      Atendimento Direto via WhatsApp
+                    </span>
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-500 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </div>
+                  <p class="mt-2 font-mono text-base font-semibold tabular-nums text-white">+55 11 96338-7266</p>
+                </div>
+                <span data-i18n="contact.whatsappAction" class="mt-4 text-xs font-medium text-slate-400 group-hover:text-slate-200">
+                  Iniciar conversa no WhatsApp
+                </span>
+              </a>
+
+              <a
+                href="mailto:tarcianosousa484@gmail.com"
+                class="group flex flex-col justify-between rounded-xl border border-white/[0.08] bg-[#111827] p-5 transition-colors duration-150 hover:border-blue-400/60"
+              >
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span data-i18n="contact.emailCardTitle" class="text-xs font-medium text-blue-400">
+                      E-mail Corporativo
+                    </span>
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 text-slate-500 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-blue-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </div>
+                  <p class="mt-2 truncate font-mono text-sm font-semibold text-white">tarcianosousa484@gmail.com</p>
+                </div>
+                <span data-i18n="contact.emailAction" class="mt-4 text-xs font-medium text-slate-400 group-hover:text-slate-200">
+                  Enviar mensagem por e-mail
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-12 flex flex-col justify-between gap-4 border-t border-white/[0.08] pt-6 text-xs text-slate-500 sm:flex-row sm:items-center">
+            <p>
+              © <span id="year-span"></span> <span data-i18n="contact.copyright">Tarciano Martim de Sousa. Todos os direitos reservados.</span>
+            </p>
+            <p data-i18n="contact.locationFooter">São Paulo, SP, Brasil</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Lightbox Modal for Expanded UI Mockup Preview -->
+    <div
+      id="preview-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-project-title"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+    >
+      <div id="preview-modal-card" class="w-full max-w-3xl rounded-xl border border-white/[0.12] bg-[#111827] p-5 sm:p-6">
+        <div class="flex items-start justify-between gap-4 border-b border-white/[0.08] pb-4">
+          <div>
+            <p id="modal-project-meta" class="text-xs font-medium text-emerald-400"></p>
+            <h3 id="modal-project-title" class="mt-1 font-display text-xl font-bold text-white"></h3>
+          </div>
+          <button
+            id="modal-close-btn"
+            type="button"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.1] bg-[#090d16] text-slate-300 hover:text-white cursor-pointer"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div id="modal-mockup-container" class="mt-5"></div>
+
+        <div class="mt-5 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+          <p id="modal-project-tagline" class="text-sm text-slate-300"></p>
+          <a
+            id="modal-project-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-950 transition-colors hover:bg-emerald-400 whitespace-nowrap shrink-0"
+          >
+            <span id="modal-visit-label"></span>
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 3h6v6" />
+              <path d="M10 14 21 3" />
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const CONTENT = {
+        pt: {
+          metaTitle: 'Tarciano Martim de Sousa — AI Product Builder & Full-Stack Web Developer',
+          nav: { summary: 'Resumo', products: 'Produtos', certifications: 'Certificações', contact: 'Contato' },
+          header: { emailLabel: 'E-mail', whatsappLabel: 'WhatsApp' },
+          hero: {
+            roleLocation: 'AI Product Builder & Full-Stack Web Developer · São Paulo, SP, Brasil',
+            headline: 'Produtos digitais completos, da concepção estratégica ao lançamento comercial.',
+            subheadline:
+              'Rapid Prototyper e Desenvolvedor Web Full-Stack especializado em arquiteturas PWA, plataformas SaaS, dashboards analíticos, automação de dados e inteligência aplicada a negócios.',
+            primaryCta: 'Explorar Produtos Publicados',
+            secondaryCta: 'Conversar no WhatsApp',
+            panelHeading: 'Portfólio em Produção',
+            panelCaption:
+              'Ecossistema ativo de aplicações próprias publicadas para usuários reais nos mercados financeiro, clínico, mobilidade e entretenimento.',
+            kpis: [
+              { value: '5', label: 'Produtos SaaS & PWA em produção' },
+              { value: '4', label: 'Verticais de mercado atendidas' },
+              { value: '5', label: 'Certificações técnicas em IA & Dados' },
+              { value: '100%', label: 'Execução autônoma ponta a ponta' },
+            ],
+          },
+          summary: {
+            eyebrow: 'Resumo Executivo',
+            heading: 'Engenharia de produto orientada a entrega real e validação comercial.',
+            lead: 'Atuação integral no ciclo de vida de software: descoberta de mercado, arquitetura técnica, interface de alta conversão, automação de dados e publicação.',
+            body: 'Combino desenvolvimento Full-Stack moderno, engenharia de prompt avançada e fluxos automatizados de análise para transformar problemas operacionais complexos em aplicações web rápidas, responsivas e escaláveis.',
+            competenciesHeading: 'Competências Centrais',
+            competencies: [
+              { index: '01', title: 'Arquitetura PWA', detail: 'Aplicações web instaláveis, carregamento instantâneo, experiência mobile-first e resiliência offline.' },
+              { index: '02', title: 'Desenvolvimento Full-Stack', detail: 'Construção ponta a ponta de interfaces reativas, regras de negócio, APIs e modelagem de dados.' },
+              { index: '03', title: 'Engenharia de Prompt', detail: 'Desenho de copilotos clínicos, agentes de tratamento de dados e fluxos estruturados de decisão.' },
+              { index: '04', title: 'Automação & AI Reports', detail: 'Pipelines analíticos automatizados, relatórios executivos e painéis de indicadores orientados a IA.' },
+              { index: '05', title: 'SEO Técnico & Analytics', detail: 'Estrutura semântica, performance Core Web Vitals, indexação orgânica e telemetria de funil.' },
+              { index: '06', title: 'UX/UI focado em Conversão', detail: 'Hierarquia visual clara, redução de atrito no onboarding e fluxos otimizados para retenção.' },
+            ],
+          },
+          showcase: {
+            eyebrow: 'Vitrine de Produtos Publicados',
+            heading: 'Sistemas em operação desenvolvidos de ponta a ponta.',
+            lead: 'Cada aplicação abaixo resolve um gargalo operacional específico, combinando interface própria, regras de domínio e disponibilidade contínua.',
+            filters: [
+              { id: 'all', label: 'Todos' },
+              { id: 'finance', label: 'Finanças & Pagamentos' },
+              { id: 'health', label: 'Saúde & Clínicas' },
+              { id: 'media', label: 'Entretenimento & Mídia' },
+            ],
+            problemLabel: 'Problema Resolvido',
+            deliverablesLabel: 'Entregáveis Técnicos',
+            visitButton: 'Acessar Projeto Online',
+            expandPreviewLabel: 'Ampliar prévia de interface',
+            closePreviewLabel: 'Fechar prévia',
+            projects: [
+              {
+                id: 'dinheuro',
+                name: 'DinhEuro',
+                url: 'https://dinheuro.com',
+                domain: 'dinheuro.com',
+                category: 'finance',
+                categoryLabel: 'Finanças & Pagamentos',
+                role: 'Fundador & Desenvolvedor Full-Stack',
+                accent: 'emerald',
+                tagline: 'Plataforma global de inteligência financeira e simulação cambial em tempo real.',
+                problemSolved:
+                  'Centraliza cotações de moedas, ações e criptoativos em um painel único, eliminando a fragmentação entre conversores simples e calculadoras financeiras complexas para decisões cambiais e macroeconômicas.',
+                deliverables: ['Simulador cambial em tempo real', 'Painel macroeconômico e cotações', 'Calculadoras financeiras técnicas', 'SEO técnico multilíngue'],
+              },
+              {
+                id: 'nutrink',
+                name: 'NutrinK',
+                url: 'https://nutrink.com.br',
+                domain: 'nutrink.com.br',
+                category: 'health',
+                categoryLabel: 'Saúde & Clínicas',
+                role: 'Fundador & Desenvolvedor Full-Stack',
+                accent: 'emerald',
+                tagline: 'Sistema web (PWA) de gestão clínica para nutricionistas e nutrólogos com copiloto NútrIA.',
+                problemSolved:
+                  'Substitui planilhas dispersas e softwares legados lentos por um prontuário unificado que automatiza cálculos antropométricos, organiza a agenda clínica e acelera condutas com apoio da assistente NútrIA.',
+                deliverables: ['Arquitetura PWA instalável', 'Calculadoras antropométricas', 'Prontuário & agenda integrada', 'Copiloto clínico NútrIA'],
+              },
+              {
+                id: 'playtelas',
+                name: 'PlayTelas',
+                url: 'https://playtelas.com',
+                domain: 'playtelas.com',
+                category: 'media',
+                categoryLabel: 'Entretenimento & Mídia',
+                role: 'Fundador & Desenvolvedor Full-Stack',
+                accent: 'blue',
+                tagline: 'Agregador web (PWA) de streaming, catálogo VOD e canais ao vivo de alto desempenho.',
+                problemSolved:
+                  'Entrega navegação instantânea e baixa latência na descoberta de canais ao vivo e catálogos sob demanda diretamente no navegador, com interface responsiva otimizada para múltiplos tamanhos de tela.',
+                deliverables: ['Interface PWA de alto desempenho', 'Grade dinâmica de canais ao vivo', 'Catálogo VOD segmentado', 'Player e navegação fluida'],
+              },
+              {
+                id: 'consuderme',
+                name: 'Consuderme',
+                url: 'https://consuderme.com.br',
+                domain: 'consuderme.com.br',
+                category: 'health',
+                categoryLabel: 'Saúde & Clínicas',
+                role: 'Fundador & Desenvolvedor Full-Stack',
+                accent: 'blue',
+                tagline: 'Plataforma de gestão especializada para clínicas dermatológicas com assistente Dermia.',
+                problemSolved:
+                  'Estrutura o fluxo de consulta dermatológica com anamnese direcionada, apoio diagnóstico, prescrição ágil de fórmulas magistrais e síntese clínica automatizada via Dermia.',
+                deliverables: ['Anamnese dermatológica estruturada', 'Gestor de fórmulas magistrais', 'Apoio diagnóstico com IA (Dermia)', 'Fluxo clínico seguro e responsivo'],
+              },
+              {
+                id: 'estradapay',
+                name: 'Estrada Pay',
+                url: 'https://estradapay.com.br',
+                domain: 'estradapay.com.br',
+                category: 'finance',
+                categoryLabel: 'Finanças & Pagamentos',
+                role: 'Fundador & Desenvolvedor Full-Stack',
+                accent: 'emerald',
+                tagline: 'Aplicação web (PWA) para consulta e pagamento ágil de pedágios eletrônicos Free Flow via Pix.',
+                problemSolved:
+                  'Elimina a fricção e o risco de multas por evasão em pórticos Free Flow ao permitir que motoristas consultem passagens pela placa e liquidem tarifas em segundos via Pix, sem instalação obrigatória de aplicativo.',
+                deliverables: ['Consulta ágil por placa Free Flow', 'Checkout instantâneo via Pix', 'Arquitetura PWA mobile-first', 'UX de conversão em poucos passos'],
+              },
+            ],
+          },
+          certifications: {
+            eyebrow: 'Certificações Técnicas & Formação',
+            heading: 'Credenciais verificáveis em IA aplicada, automação e análise de dados.',
+            lead: 'Especialização prática na construção de agentes de tratamento de dados, relatórios executivos automatizados e painéis analíticos.',
+            codeLabel: 'Código',
+            copyLabel: 'Copiar código',
+            copiedLabel: 'Copiado',
+            items: [
+              { title: 'Aceleração: AI Reports com Excel, GPT Agents e Claude Code', issuer: 'Santander & DIO', code: 'KIAQ31V2', focus: 'Automação executiva de relatórios e fluxos assistidos por agentes' },
+              { title: 'Módulo: AI Reports com Excel, GPT Agents e Claude Code', issuer: 'DIO', code: 'OBH5IXCN', focus: 'Arquitetura de relatórios analíticos com geração estruturada' },
+              { title: 'Projeto Prático: Criando uma Dashboard da Porsche com Agentes de IA', issuer: 'DIO', code: 'P98WQUII', focus: 'Modelagem visual de KPIs executivos e storytelling com dados' },
+              { title: 'Criando Agentes de Tratamento de Dados', issuer: 'DIO', code: 'XPNKRCZD', focus: 'Normalização, limpeza e estruturação automatizada de bases' },
+              { title: 'Introdução a AI Reports', issuer: 'DIO', code: '7VJ8BOAJ', focus: 'Fundamentos de inteligência analítica aplicada a negócios' },
+            ],
+          },
+          contact: {
+            eyebrow: 'Contato Direto',
+            heading: 'Disponível para projetos estratégicos, liderança técnica e produtos digitais.',
+            lead: 'Para recrutadores, parceiros ou contratação de desenvolvimento sob medida em São Paulo ou remoto, utilize os canais diretos abaixo.',
+            emailCardTitle: 'E-mail Corporativo',
+            emailAction: 'Enviar mensagem por e-mail',
+            whatsappCardTitle: 'Atendimento Direto via WhatsApp',
+            whatsappAction: 'Iniciar conversa no WhatsApp',
+            copyright: 'Tarciano Martim de Sousa. Todos os direitos reservados.',
+            locationFooter: 'São Paulo, SP, Brasil',
+          },
+        },
+        en: {
+          metaTitle: 'Tarciano Martim de Sousa — AI Product Builder & Full-Stack Web Developer',
+          nav: { summary: 'Overview', products: 'Products', certifications: 'Certifications', contact: 'Contact' },
+          header: { emailLabel: 'Email', whatsappLabel: 'WhatsApp' },
+          hero: {
+            roleLocation: 'AI Product Builder & Full-Stack Web Developer · São Paulo, SP, Brazil',
+            headline: 'End-to-end digital products, from strategic conception to commercial launch.',
+            subheadline:
+              'Rapid Prototyper and Full-Stack Web Developer specializing in PWA architectures, SaaS platforms, analytical dashboards, data automation, and applied business intelligence.',
+            primaryCta: 'Explore Live Products',
+            secondaryCta: 'Message on WhatsApp',
+            panelHeading: 'Products in Production',
+            panelCaption:
+              'Active ecosystem of proprietary web applications serving users across finance, clinical healthcare, mobility, and streaming media.',
+            kpis: [
+              { value: '5', label: 'Live SaaS & PWA products' },
+              { value: '4', label: 'Industry verticals served' },
+              { value: '5', label: 'AI & Data technical credentials' },
+              { value: '100%', label: 'Autonomous end-to-end delivery' },
+            ],
+          },
+          summary: {
+            eyebrow: 'Executive Summary',
+            heading: 'Product engineering focused on real delivery and commercial readiness.',
+            lead: 'Full ownership across the software lifecycle: market discovery, technical architecture, conversion-oriented UI, data automation, and launch.',
+            body: 'I combine modern Full-Stack engineering, advanced prompt design, and automated analytical workflows to turn complex operational bottlenecks into fast, responsive, scalable web applications.',
+            competenciesHeading: 'Core Competencies',
+            competencies: [
+              { index: '01', title: 'PWA Architecture', detail: 'Installable web apps, instant loading, mobile-first ergonomics, and offline resilience.' },
+              { index: '02', title: 'Full-Stack Development', detail: 'End-to-end delivery of reactive interfaces, business logic, APIs, and data models.' },
+              { index: '03', title: 'Prompt Engineering', detail: 'Design of clinical copilots, data-processing agents, and structured decision workflows.' },
+              { index: '04', title: 'Automation & AI Reports', detail: 'Automated analytical pipelines, executive reporting, and AI-assisted KPI dashboards.' },
+              { index: '05', title: 'Technical SEO & Analytics', detail: 'Semantic structure, Core Web Vitals optimization, organic indexing, and funnel telemetry.' },
+              { index: '06', title: 'Conversion-Focused UX/UI', detail: 'Clear visual hierarchy, low-friction onboarding, and retention-driven product flows.' },
+            ],
+          },
+          showcase: {
+            eyebrow: 'Published Product Showcase',
+            heading: 'Production systems built and shipped end to end.',
+            lead: 'Each application solves a concrete operational problem, uniting domain-specific interface design, business rules, and continuous availability.',
+            filters: [
+              { id: 'all', label: 'All' },
+              { id: 'finance', label: 'Finance & Payments' },
+              { id: 'health', label: 'Health & Clinics' },
+              { id: 'media', label: 'Entertainment & Media' },
+            ],
+            problemLabel: 'Problem Solved',
+            deliverablesLabel: 'Technical Deliverables',
+            visitButton: 'Open Live Project',
+            expandPreviewLabel: 'Expand interface preview',
+            closePreviewLabel: 'Close preview',
+            projects: [
+              {
+                id: 'dinheuro',
+                name: 'DinhEuro',
+                url: 'https://dinheuro.com',
+                domain: 'dinheuro.com',
+                category: 'finance',
+                categoryLabel: 'Finance & Payments',
+                role: 'Founder & Full-Stack Developer',
+                accent: 'emerald',
+                tagline: 'Global financial intelligence and real-time FX simulation platform.',
+                problemSolved:
+                  'Unifies currency, equity, and crypto quotes inside a single workspace, replacing fragmented converters and complex spreadsheets for FX and macroeconomic decisions.',
+                deliverables: ['Real-time FX simulation engine', 'Macroeconomic & market quotes panel', 'Technical financial calculators', 'Multilingual technical SEO'],
+              },
+              {
+                id: 'nutrink',
+                name: 'NutrinK',
+                url: 'https://nutrink.com.br',
+                domain: 'nutrink.com.br',
+                category: 'health',
+                categoryLabel: 'Health & Clinics',
+                role: 'Founder & Full-Stack Developer',
+                accent: 'emerald',
+                tagline: 'Clinical management PWA for nutritionists and nutrologists featuring the NútrIA copilot.',
+                problemSolved:
+                  'Replaces scattered spreadsheets and slow legacy tools with a unified patient record system that automates anthropometric math, scheduling, and clinical support via NútrIA.',
+                deliverables: ['Installable PWA architecture', 'Anthropometric calculators', 'Integrated EHR & scheduling', 'NútrIA clinical AI copilot'],
+              },
+              {
+                id: 'playtelas',
+                name: 'PlayTelas',
+                url: 'https://playtelas.com',
+                domain: 'playtelas.com',
+                category: 'media',
+                categoryLabel: 'Entertainment & Media',
+                role: 'Founder & Full-Stack Developer',
+                accent: 'blue',
+                tagline: 'High-performance streaming aggregator PWA with VOD catalog and live channels.',
+                problemSolved:
+                  'Delivers instant navigation and low-latency discovery across live channels and on-demand catalogs directly in the browser, responsive across desktop and mobile viewports.',
+                deliverables: ['High-performance PWA frontend', 'Dynamic live channel guide', 'Categorized VOD catalog', 'Fluid media player workflow'],
+              },
+              {
+                id: 'consuderme',
+                name: 'Consuderme',
+                url: 'https://consuderme.com.br',
+                domain: 'consuderme.com.br',
+                category: 'health',
+                categoryLabel: 'Health & Clinics',
+                role: 'Founder & Full-Stack Developer',
+                accent: 'blue',
+                tagline: 'Specialized clinical management platform for dermatology practices with Dermia assistant.',
+                problemSolved:
+                  'Structures dermatology consultations with guided anamnesis, diagnostic support, compounded formula prescribing, and automated clinical synthesis powered by Dermia.',
+                deliverables: ['Structured dermatology anamnesis', 'Compounded formula builder', 'Dermia diagnostic AI support', 'Responsive clinical workspace'],
+              },
+              {
+                id: 'estradapay',
+                name: 'Estrada Pay',
+                url: 'https://estradapay.com.br',
+                domain: 'estradapay.com.br',
+                category: 'finance',
+                categoryLabel: 'Finance & Payments',
+                role: 'Founder & Full-Stack Developer',
+                accent: 'emerald',
+                tagline: 'Web application (PWA) for rapid Free Flow electronic toll lookup and Pix settlement.',
+                problemSolved:
+                  'Removes friction and fine risks on Free Flow highway gantries by enabling drivers to look up passages by license plate and settle tolls in seconds via Pix with zero app-store install.',
+                deliverables: ['License-plate Free Flow lookup', 'Instant Pix checkout flow', 'Mobile-first PWA architecture', 'Low-friction conversion UX'],
+              },
+            ],
+          },
+          certifications: {
+            eyebrow: 'Technical Certifications & Training',
+            heading: 'Verifiable credentials in applied AI, automation, and data reporting.',
+            lead: 'Hands-on specialization in building data-processing agents, automated executive reports, and analytical KPI dashboards.',
+            codeLabel: 'Code',
+            copyLabel: 'Copy code',
+            copiedLabel: 'Copied',
+            items: [
+              { title: 'Acceleration: AI Reports with Excel, GPT Agents & Claude Code', issuer: 'Santander & DIO', code: 'KIAQ31V2', focus: 'Executive report automation and agent-assisted analytical pipelines' },
+              { title: 'Module: AI Reports with Excel, GPT Agents & Claude Code', issuer: 'DIO', code: 'OBH5IXCN', focus: 'Structured generation architecture for analytical reporting' },
+              { title: 'Applied Project: Building a Porsche Dashboard with AI Agents', issuer: 'DIO', code: 'P98WQUII', focus: 'Executive KPI modeling and data-driven visual storytelling' },
+              { title: 'Building Data Processing Agents', issuer: 'DIO', code: 'XPNKRCZD', focus: 'Automated dataset cleaning, normalization, and structuring' },
+              { title: 'Introduction to AI Reports', issuer: 'DIO', code: '7VJ8BOAJ', focus: 'Foundations of applied analytical intelligence for business' },
+            ],
+          },
+          contact: {
+            eyebrow: 'Direct Contact',
+            heading: 'Available for strategic product roles, technical leadership, and custom builds.',
+            lead: 'For executive recruiters, partners, or bespoke digital product inquiries in São Paulo or remote, reach out directly below.',
+            emailCardTitle: 'Direct Email',
+            emailAction: 'Send an email message',
+            whatsappCardTitle: 'Direct WhatsApp',
+            whatsappAction: 'Start WhatsApp chat',
+            copyright: 'Tarciano Martim de Sousa. All rights reserved.',
+            locationFooter: 'São Paulo, SP, Brazil',
+          },
+        },
+        es: {
+          metaTitle: 'Tarciano Martim de Sousa — AI Product Builder & Full-Stack Web Developer',
+          nav: { summary: 'Resumen', products: 'Productos', certifications: 'Certificaciones', contact: 'Contacto' },
+          header: { emailLabel: 'Correo', whatsappLabel: 'WhatsApp' },
+          hero: {
+            roleLocation: 'AI Product Builder & Full-Stack Web Developer · São Paulo, SP, Brasil',
+            headline: 'Productos digitales completos, desde la concepción estratégica hasta el lanzamiento comercial.',
+            subheadline:
+              'Rapid Prototyper y Desarrollador Web Full-Stack especializado en arquitecturas PWA, plataformas SaaS, paneles analíticos, automatización de datos e inteligencia aplicada al negocio.',
+            primaryCta: 'Explorar Productos Publicados',
+            secondaryCta: 'Hablar por WhatsApp',
+            panelHeading: 'Portafolio en Producción',
+            panelCaption:
+              'Ecosistema activo de aplicaciones propias en operación para usuarios reales en finanzas, salud clínica, movilidad y entretenimiento.',
+            kpis: [
+              { value: '5', label: 'Productos SaaS y PWA activos' },
+              { value: '4', label: 'Verticales de mercado atendidas' },
+              { value: '5', label: 'Certificaciones técnicas en IA y Datos' },
+              { value: '100%', label: 'Ejecución autónoma de extremo a extremo' },
+            ],
+          },
+          summary: {
+            eyebrow: 'Resumen Ejecutivo',
+            heading: 'Ingeniería de producto orientada a la entrega real y validación comercial.',
+            lead: 'Participación integral en el ciclo de vida del software: descubrimiento de mercado, arquitectura técnica, interfaz de alta conversión, automatización y lanzamiento.',
+            body: 'Combino desarrollo Full-Stack moderno, ingeniería de prompts avanzada y flujos automatizados de análisis para transformar problemas operativos complejos en aplicaciones web rápidas, responsivas y escalables.',
+            competenciesHeading: 'Competencias Clave',
+            competencies: [
+              { index: '01', title: 'Arquitectura PWA', detail: 'Aplicaciones web instalables, carga instantánea, enfoque mobile-first y resiliencia offline.' },
+              { index: '02', title: 'Desarrollo Full-Stack', detail: 'Construcción integral de interfaces reactivas, lógica de negocio, APIs y modelado de datos.' },
+              { index: '03', title: 'Ingeniería de Prompts', detail: 'Diseño de copilotos clínicos, agentes de procesamiento de datos y flujos estructurados de decisión.' },
+              { index: '04', title: 'Automatización y AI Reports', detail: 'Pipelines analíticos automatizados, reportes ejecutivos y tableros de indicadores con IA.' },
+              { index: '05', title: 'SEO Técnico y Analytics', detail: 'Estructura semántica, rendimiento Core Web Vitals, indexación orgánica y analítica de embudo.' },
+              { index: '06', title: 'UX/UI Enfocado en Conversión', detail: 'Jerarquía visual clara, reducción de fricción en el onboarding y flujos orientados a retención.' },
+            ],
+          },
+          showcase: {
+            eyebrow: 'Vitrina de Productos Publicados',
+            heading: 'Sistemas en operación desarrollados de extremo a extremo.',
+            lead: 'Cada aplicación resuelve un cuello de botella operativo concreto, integrando diseño de interfaz propio, reglas de dominio y disponibilidad continua.',
+            filters: [
+              { id: 'all', label: 'Todos' },
+              { id: 'finance', label: 'Finanzas y Pagos' },
+              { id: 'health', label: 'Salud y Clínicas' },
+              { id: 'media', label: 'Entretenimiento y Medios' },
+            ],
+            problemLabel: 'Problema Resuelto',
+            deliverablesLabel: 'Entregables Técnicos',
+            visitButton: 'Acceder al Proyecto Online',
+            expandPreviewLabel: 'Ampliar vista previa',
+            closePreviewLabel: 'Cerrar vista previa',
+            projects: [
+              {
+                id: 'dinheuro',
+                name: 'DinhEuro',
+                url: 'https://dinheuro.com',
+                domain: 'dinheuro.com',
+                category: 'finance',
+                categoryLabel: 'Finanzas y Pagos',
+                role: 'Fundador y Desarrollador Full-Stack',
+                accent: 'emerald',
+                tagline: 'Plataforma global de inteligencia financiera y simulación cambiaria en tiempo real.',
+                problemSolved:
+                  'Centraliza cotizaciones de divisas, acciones y criptoactivos en un único panel, eliminando la fragmentación entre conversores básicos y calculadoras financieras complejas.',
+                deliverables: ['Simulador cambiario en tiempo real', 'Panel macroeconómico y cotizaciones', 'Calculadoras financieras técnicas', 'SEO técnico multilingüe'],
+              },
+              {
+                id: 'nutrink',
+                name: 'NutrinK',
+                url: 'https://nutrink.com.br',
+                domain: 'nutrink.com.br',
+                category: 'health',
+                categoryLabel: 'Salud y Clínicas',
+                role: 'Fundador y Desarrollador Full-Stack',
+                accent: 'emerald',
+                tagline: 'Sistema web (PWA) de gestión clínica para nutricionistas y nutrólogos con copiloto NútrIA.',
+                problemSolved:
+                  'Sustituye hojas de cálculo dispersas y sistemas lentos por una historia clínica unificada que automatiza cálculos antropométricos, agenda integrada y soporte clínico con NútrIA.',
+                deliverables: ['Arquitectura PWA instalable', 'Calculadoras antropométricas', 'Historia clínica y agenda integrada', 'Copiloto clínico NútrIA'],
+              },
+              {
+                id: 'playtelas',
+                name: 'PlayTelas',
+                url: 'https://playtelas.com',
+                domain: 'playtelas.com',
+                category: 'media',
+                categoryLabel: 'Entretenimiento y Medios',
+                role: 'Fundador y Desarrollador Full-Stack',
+                accent: 'blue',
+                tagline: 'Agregador web (PWA) de streaming, catálogo VOD y canales en vivo de alto rendimiento.',
+                problemSolved:
+                  'Ofrece navegación instantánea y baja latencia para descubrir canales en vivo y catálogos bajo demanda directamente desde el navegador, con diseño responsivo para cualquier pantalla.',
+                deliverables: ['Interfaz PWA de alto rendimiento', 'Guía dinámica de canales en vivo', 'Catálogo VOD segmentado', 'Reproductor y navegación fluida'],
+              },
+              {
+                id: 'consuderme',
+                name: 'Consuderme',
+                url: 'https://consuderme.com.br',
+                domain: 'consuderme.com.br',
+                category: 'health',
+                categoryLabel: 'Salud y Clínicas',
+                role: 'Fundador y Desarrollador Full-Stack',
+                accent: 'blue',
+                tagline: 'Plataforma de gestión especializada para clínicas dermatológicas con asistente Dermia.',
+                problemSolved:
+                  'Estructura la consulta dermatológica mediante anamnesis guiada, apoyo diagnóstico, prescripción ágil de fórmulas magistrales y síntesis clínica asistida por Dermia.',
+                deliverables: ['Anamnesis dermatológica estructurada', 'Gestor de fórmulas magistrales', 'Apoyo diagnóstico con IA (Dermia)', 'Flujo clínico seguro y responsivo'],
+              },
+              {
+                id: 'estradapay',
+                name: 'Estrada Pay',
+                url: 'https://estradapay.com.br',
+                domain: 'estradapay.com.br',
+                category: 'finance',
+                categoryLabel: 'Finanzas y Pagos',
+                role: 'Fundador y Desarrollador Full-Stack',
+                accent: 'emerald',
+                tagline: 'Aplicación web (PWA) para consulta y pago ágil de peajes electrónicos Free Flow vía Pix.',
+                problemSolved:
+                  'Elimina fricciones y riesgos de multas en pórticos Free Flow permitiendo consultar tránsitos por matrícula y pagar tarifas en segundos con Pix, sin descargas obligatorias.',
+                deliverables: ['Consulta ágil por matrícula Free Flow', 'Checkout instantáneo vía Pix', 'Arquitectura PWA mobile-first', 'UX de conversión en pocos pasos'],
+              },
+            ],
+          },
+          certifications: {
+            eyebrow: 'Certificaciones Técnicas y Formación',
+            heading: 'Credenciales verificables en IA aplicada, automatización y análisis de datos.',
+            lead: 'Especialización práctica en la creación de agentes de tratamiento de datos, reportes ejecutivos automatizados y tableros analíticos.',
+            codeLabel: 'Código',
+            copyLabel: 'Copiar código',
+            copiedLabel: 'Copiado',
+            items: [
+              { title: 'Aceleración: AI Reports con Excel, GPT Agents y Claude Code', issuer: 'Santander & DIO', code: 'KIAQ31V2', focus: 'Automatización ejecutiva de reportes y flujos asistidos por agentes' },
+              { title: 'Módulo: AI Reports con Excel, GPT Agents y Claude Code', issuer: 'DIO', code: 'OBH5IXCN', focus: 'Arquitectura de reportes analíticos con generación estructurada' },
+              { title: 'Proyecto Práctico: Creando un Dashboard de Porsche con Agentes de IA', issuer: 'DIO', code: 'P98WQUII', focus: 'Modelado visual de KPIs ejecutivos y narrativa con datos' },
+              { title: 'Creando Agentes de Tratamiento de Datos', issuer: 'DIO', code: 'XPNKRCZD', focus: 'Limpieza, normalización y estructuración automatizada de bases' },
+              { title: 'Introducción a AI Reports', issuer: 'DIO', code: '7VJ8BOAJ', focus: 'Fundamentos de inteligencia analítica aplicada al negocio' },
+            ],
+          },
+          contact: {
+            eyebrow: 'Contacto Directo',
+            heading: 'Disponible para proyectos estratégicos, liderazgo técnico y productos digitales.',
+            lead: 'Para reclutadores, socios o desarrollo de productos a medida en São Paulo o en remoto, utiliza los canales directos a continuación.',
+            emailCardTitle: 'Correo Directo',
+            emailAction: 'Enviar mensaje por correo',
+            whatsappCardTitle: 'Atención Directa por WhatsApp',
+            whatsappAction: 'Iniciar chat en WhatsApp',
+            copyright: 'Tarciano Martim de Sousa. Todos los derechos reservados.',
+            locationFooter: 'São Paulo, SP, Brasil',
+          },
+        },
+      };
+
+      const MOCKUP_SCREENS = {
+        dinheuro: `
+          <div class="flex h-full flex-col justify-between gap-2.5 text-left">
+            <div class="flex items-center justify-between border-b border-white/[0.06] pb-2">
+              <div class="flex items-center gap-2">
+                <div class="flex h-5 w-5 items-center justify-center rounded bg-emerald-500/15 font-mono text-[10px] font-semibold text-emerald-400">D$</div>
+                <span class="font-display text-xs font-semibold tracking-tight text-slate-100">DinhEuro Terminal</span>
+              </div>
+              <div class="flex items-center gap-3 font-mono text-[10px] tabular-nums text-slate-400">
+                <span>USD/BRL <strong class="text-emerald-400">5.74</strong></span>
+                <span>EUR/BRL <strong class="text-slate-200">6.12</strong></span>
+                <span class="hidden sm:inline">SELIC <strong class="text-blue-400">11.25%</strong></span>
+              </div>
+            </div>
+            <div class="grid flex-1 grid-cols-12 gap-2.5">
+              <div class="col-span-7 flex flex-col justify-between rounded border border-white/[0.06] bg-[#0b101b] p-2.5">
+                <div class="flex items-baseline justify-between">
+                  <div>
+                    <p class="text-[9px] uppercase tracking-wider text-slate-500">FX Spot · USD / BRL</p>
+                    <p class="font-mono text-sm font-semibold tabular-nums text-white">R$ 5,7420</p>
+                  </div>
+                  <span class="font-mono text-[10px] tabular-nums text-emerald-400">+0.42%</span>
+                </div>
+                <svg viewBox="0 0 220 72" class="h-16 w-full overflow-visible" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="dinheuroArea" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#10b981" stop-opacity="0.28" />
+                      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 54 L26 48 L52 52 L78 36 L104 41 L130 27 L156 31 L182 18 L220 12 L220 72 L0 72 Z" fill="url(#dinheuroArea)" />
+                  <path d="M0 54 L26 48 L52 52 L78 36 L104 41 L130 27 L156 31 L182 18 L220 12" fill="none" stroke="#10b981" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="220" cy="12" r="2.5" fill="#10b981" />
+                </svg>
+                <div class="flex justify-between font-mono text-[9px] tabular-nums text-slate-500">
+                  <span>09:00</span><span>12:00</span><span>15:00</span><span>18:00</span>
+                </div>
+              </div>
+              <div class="col-span-5 flex flex-col justify-between rounded border border-white/[0.06] bg-[#0b101b] p-2.5">
+                <p class="text-[9px] font-medium uppercase tracking-wider text-slate-400">Simulador Cambial</p>
+                <div class="space-y-1.5">
+                  <div class="rounded border border-white/[0.06] bg-[#090d16] px-2 py-1">
+                    <span class="block text-[8px] text-slate-500">USD · Enviar</span>
+                    <span class="font-mono text-xs font-medium tabular-nums text-slate-100">1,000.00</span>
+                  </div>
+                  <div class="rounded border border-emerald-500/30 bg-emerald-500/[0.06] px-2 py-1">
+                    <span class="block text-[8px] text-emerald-400">BRL · Receber</span>
+                    <span class="font-mono text-xs font-semibold tabular-nums text-emerald-300">5,742.00</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between border-t border-white/[0.06] pt-1.5 font-mono text-[9px] tabular-nums text-slate-400">
+                  <span>BTC</span><span class="text-emerald-400">$91,420</span>
+                </div>
+              </div>
+            </div>
+          </div>`,
+        nutrink: `
+          <div class="grid h-full grid-cols-12 gap-2.5 text-left">
+            <div class="col-span-3 flex flex-col justify-between rounded border border-white/[0.06] bg-[#0b101b] p-2">
+              <div class="space-y-2">
+                <div class="flex items-center gap-1.5">
+                  <div class="h-4 w-4 rounded bg-emerald-500/20 text-center font-mono text-[9px] font-bold leading-4 text-emerald-400">N</div>
+                  <span class="font-display text-[11px] font-semibold text-slate-100">NutrinK</span>
+                </div>
+                <div class="space-y-1 pt-1 text-[9px] text-slate-400">
+                  <div class="rounded bg-emerald-500/15 px-1.5 py-1 font-medium text-emerald-300">Prontuário</div>
+                  <div class="px-1.5 py-0.5">Antropometria</div>
+                  <div class="px-1.5 py-0.5">Plano Alimentar</div>
+                  <div class="px-1.5 py-0.5">Agenda</div>
+                </div>
+              </div>
+              <div class="rounded border border-blue-500/25 bg-blue-500/10 p-1.5">
+                <p class="text-[8px] font-semibold text-blue-300">NútrIA Copiloto</p>
+                <p class="mt-0.5 text-[8px] leading-tight text-slate-400">TMB calculada: 1.640 kcal</p>
+              </div>
+            </div>
+            <div class="col-span-9 flex flex-col justify-between gap-2">
+              <div class="grid grid-cols-3 gap-2">
+                <div class="rounded border border-white/[0.06] bg-[#0b101b] p-2"><span class="block text-[8px] text-slate-500">Massa Magra</span><span class="font-mono text-xs font-semibold tabular-nums text-emerald-400">76.4%</span></div>
+                <div class="rounded border border-white/[0.06] bg-[#0b101b] p-2"><span class="block text-[8px] text-slate-500">Gordura Corp.</span><span class="font-mono text-xs font-semibold tabular-nums text-slate-100">18.2%</span></div>
+                <div class="rounded border border-white/[0.06] bg-[#0b101b] p-2"><span class="block text-[8px] text-slate-500">Meta Diária</span><span class="font-mono text-xs font-semibold tabular-nums text-blue-400">2.150 kcal</span></div>
+              </div>
+              <div class="flex flex-1 flex-col justify-between rounded border border-white/[0.06] bg-[#0b101b] p-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-[9px] font-medium text-slate-300">Evolução Antropométrica · 12 Semanas</span>
+                  <span class="font-mono text-[9px] tabular-nums text-emerald-400">-4.8 kg GC</span>
+                </div>
+                <svg viewBox="0 0 240 60" class="h-14 w-full" aria-hidden="true">
+                  <line x1="0" y1="15" x2="240" y2="15" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3" />
+                  <line x1="0" y1="35" x2="240" y2="35" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3" />
+                  <path d="M6 46 C48 42, 82 32, 120 26 C158 20, 196 14, 234 10" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" />
+                  <path d="M6 16 C48 20, 82 28, 120 34 C158 40, 196 44, 234 48" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round" />
+                </svg>
+                <div class="flex items-center justify-between text-[8px] text-slate-500">
+                  <span>Consulta 14:30 · Paciente M. Oliveira</span>
+                  <span class="text-emerald-400">PWA Ativo</span>
+                </div>
+              </div>
+            </div>
+          </div>`,
+        playtelas: `
+          <div class="flex h-full flex-col justify-between gap-2.5 text-left">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="flex h-5 w-5 items-center justify-center rounded bg-blue-600/25 text-blue-400">
+                  <svg viewBox="0 0 16 16" class="h-3 w-3 fill-current" aria-hidden="true"><path d="M4 3.2v9.6l8.5-4.8L4 3.2z" /></svg>
+                </div>
+                <span class="font-display text-xs font-semibold text-white">PlayTelas</span>
+              </div>
+              <div class="flex items-center gap-3 text-[9px] text-slate-400">
+                <span class="text-white font-medium">Ao Vivo</span><span>Catálogo VOD</span><span>Esportes</span>
+              </div>
+            </div>
+            <div class="relative flex flex-1 flex-col justify-end overflow-hidden rounded border border-white/[0.08] bg-gradient-to-br from-blue-950/70 via-[#0f172a] to-emerald-950/30 p-3">
+              <div class="flex items-end justify-between gap-2">
+                <div>
+                  <p class="font-mono text-[9px] uppercase tracking-wider text-blue-400">Transmissão 1080p · Baixa Latência</p>
+                  <p class="font-display text-sm font-semibold text-white">Canal Principal · Cinema &amp; Séries</p>
+                </div>
+                <div class="rounded bg-blue-600 px-2.5 py-1 text-[9px] font-semibold text-white">Assistir Agora</div>
+              </div>
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+              <div class="rounded border border-white/[0.06] bg-[#0b101b] p-1.5"><span class="block font-mono text-[8px] text-slate-500">CH 01</span><span class="block truncate text-[9px] font-medium text-slate-200">Notícias 24h</span><div class="mt-1 h-0.5 w-full rounded bg-slate-800"><div class="h-0.5 w-4/5 rounded bg-blue-500"></div></div></div>
+              <div class="rounded border border-white/[0.06] bg-[#0b101b] p-1.5"><span class="block font-mono text-[8px] text-slate-500">CH 02</span><span class="block truncate text-[9px] font-medium text-slate-200">Esportes HD</span><div class="mt-1 h-0.5 w-full rounded bg-slate-800"><div class="h-0.5 w-3/5 rounded bg-emerald-500"></div></div></div>
+              <div class="rounded border border-white/[0.06] bg-[#0b101b] p-1.5"><span class="block font-mono text-[8px] text-slate-500">VOD</span><span class="block truncate text-[9px] font-medium text-slate-200">Documentários</span><div class="mt-1 h-0.5 w-full rounded bg-slate-800"><div class="h-0.5 w-2/3 rounded bg-blue-400"></div></div></div>
+              <div class="rounded border border-white/[0.06] bg-[#0b101b] p-1.5"><span class="block font-mono text-[8px] text-slate-500">VOD</span><span class="block truncate text-[9px] font-medium text-slate-200">Lançamentos</span><div class="mt-1 h-0.5 w-full rounded bg-slate-800"><div class="h-0.5 w-1/2 rounded bg-slate-500"></div></div></div>
+            </div>
+          </div>`,
+        consuderme: `
+          <div class="grid h-full grid-cols-12 gap-2.5 text-left">
+            <div class="col-span-7 flex flex-col justify-between rounded border border-white/[0.06] bg-[#0b101b] p-2.5">
+              <div class="flex items-center justify-between border-b border-white/[0.06] pb-1.5">
+                <span class="font-display text-[11px] font-semibold text-white">Consuderme · Prontuário</span>
+                <span class="font-mono text-[9px] text-blue-400">Fototipo III</span>
+              </div>
+              <div class="space-y-1.5 py-1">
+                <div class="flex items-center justify-between rounded bg-[#090d16] px-2 py-1 text-[9px]"><span class="text-slate-400">Anamnese Estruturada</span><span class="font-mono text-emerald-400">Completa</span></div>
+                <div class="flex items-center justify-between rounded bg-[#090d16] px-2 py-1 text-[9px]"><span class="text-slate-400">Mapeamento de Lesões</span><span class="font-mono text-slate-200">Região Facial</span></div>
+              </div>
+              <div class="rounded border border-blue-500/25 bg-blue-500/[0.08] p-2">
+                <p class="text-[9px] font-semibold text-blue-300">Dermia · Apoio Diagnóstico</p>
+                <p class="mt-0.5 text-[8px] leading-snug text-slate-300">Sugestão de protocolo tópico noturno + fotoproteção FPS 60 com revisão em 30 dias.</p>
+              </div>
+            </div>
+            <div class="col-span-5 flex flex-col justify-between rounded border border-white/[0.06] bg-[#0b101b] p-2.5">
+              <div>
+                <p class="text-[9px] font-medium uppercase tracking-wider text-slate-400">Fórmula Magistral</p>
+                <div class="mt-2 space-y-1.5 font-mono text-[9px] tabular-nums">
+                  <div class="flex justify-between border-b border-white/[0.05] pb-1 text-slate-200"><span>Niacinamida</span><span class="text-blue-400">4.0%</span></div>
+                  <div class="flex justify-between border-b border-white/[0.05] pb-1 text-slate-200"><span>Ácido Azelaico</span><span class="text-blue-400">15.0%</span></div>
+                  <div class="flex justify-between border-b border-white/[0.05] pb-1 text-slate-200"><span>Alfa-Bisabolol</span><span class="text-blue-400">1.0%</span></div>
+                  <div class="flex justify-between text-slate-400"><span>Veículo Sérum qsp</span><span>30g</span></div>
+                </div>
+              </div>
+              <div class="rounded bg-blue-600/20 py-1 text-center text-[9px] font-medium text-blue-300 border border-blue-500/30">Emitir Receituário</div>
+            </div>
+          </div>`,
+        estradapay: `
+          <div class="grid h-full grid-cols-12 gap-2.5 text-left">
+            <div class="col-span-7 flex flex-col justify-between rounded border border-white/[0.06] bg-[#0b101b] p-2.5">
+              <div class="flex items-center justify-between">
+                <span class="font-display text-[11px] font-semibold text-white">Estrada Pay · Free Flow</span>
+                <span class="font-mono text-[9px] text-emerald-400">SP-330 / BR-101</span>
+              </div>
+              <div class="rounded border border-white/[0.08] bg-[#090d16] p-2">
+                <span class="block text-[8px] uppercase tracking-wider text-slate-500">Placa Consultada</span>
+                <div class="mt-1 flex items-center justify-between">
+                  <span class="font-mono text-sm font-bold tracking-widest text-white">BRA2E19</span>
+                  <span class="font-mono text-[9px] text-emerald-400">2 passagens</span>
+                </div>
+              </div>
+              <div class="space-y-1 font-mono text-[9px] tabular-nums text-slate-300">
+                <div class="flex items-center justify-between"><span>Pórtico Km 42 · 10:14</span><span>R$ 12,40</span></div>
+                <div class="flex items-center justify-between"><span>Pórtico Km 88 · 11:02</span><span>R$ 14,80</span></div>
+              </div>
+            </div>
+            <div class="col-span-5 flex flex-col items-center justify-between rounded border border-emerald-500/25 bg-emerald-500/[0.05] p-2.5 text-center">
+              <div class="w-full">
+                <p class="text-[9px] font-medium text-emerald-300">Pagamento via Pix</p>
+                <p class="font-mono text-sm font-bold tabular-nums text-white">R$ 27,20</p>
+              </div>
+              <svg viewBox="0 0 48 48" class="h-14 w-14 rounded bg-white p-1" aria-hidden="true">
+                <rect x="3" y="3" width="14" height="14" fill="#090d16" /><rect x="6" y="6" width="8" height="8" fill="#ffffff" /><rect x="8" y="8" width="4" height="4" fill="#090d16" />
+                <rect x="31" y="3" width="14" height="14" fill="#090d16" /><rect x="34" y="6" width="8" height="8" fill="#ffffff" /><rect x="36" y="8" width="4" height="4" fill="#090d16" />
+                <rect x="3" y="31" width="14" height="14" fill="#090d16" /><rect x="6" y="34" width="8" height="8" fill="#ffffff" /><rect x="8" y="36" width="4" height="4" fill="#090d16" />
+                <rect x="21" y="5" width="5" height="5" fill="#090d16" /><rect x="21" y="15" width="6" height="6" fill="#090d16" />
+                <rect x="5" y="21" width="6" height="6" fill="#090d16" /><rect x="16" y="24" width="8" height="5" fill="#090d16" />
+                <rect x="28" y="21" width="6" height="6" fill="#090d16" /><rect x="38" y="22" width="6" height="5" fill="#090d16" />
+                <rect x="22" y="33" width="6" height="6" fill="#090d16" /><rect x="32" y="31" width="6" height="6" fill="#090d16" /><rect x="39" y="38" width="6" height="6" fill="#090d16" />
+              </svg>
+              <div class="w-full rounded bg-emerald-500 py-1 text-[9px] font-semibold text-slate-950">Liquidar Tarifa</div>
+            </div>
+          </div>`,
+      };
+
+      let currentLocale = 'pt';
+      let currentCategory = 'all';
+      let copiedCode = null;
+      let expandedProjectId = null;
+
+      function getNested(obj, path) {
+        return path.split('.').reduce((acc, part) => (acc ? acc[part] : ''), obj);
+      }
+
+      function buildMockupFrame(project) {
+        return `
+          <div class="relative w-full overflow-hidden rounded-lg border border-white/[0.08] bg-[#070b13] select-none">
+            <div class="flex items-center justify-between border-b border-white/[0.07] bg-[#0c1220] px-3 py-2">
+              <div class="flex items-center gap-1.5" aria-hidden="true">
+                <span class="h-2 w-2 rounded-full bg-slate-700"></span>
+                <span class="h-2 w-2 rounded-full bg-slate-700"></span>
+                <span class="h-2 w-2 rounded-full bg-slate-700"></span>
+              </div>
+              <div class="rounded bg-[#090d16] px-2.5 py-0.5 font-mono text-[10px] tracking-tight text-slate-400 border border-white/[0.06]">
+                https://${project.domain}
+              </div>
+              <div class="w-8" aria-hidden="true"></div>
+            </div>
+            <div class="aspect-[16/10] w-full p-3.5 sm:p-4">${MOCKUP_SCREENS[project.id]}</div>
+          </div>`;
+      }
+
+      function openPreviewModal(projectId) {
+        const t = CONTENT[currentLocale];
+        const project = t.showcase.projects.find((p) => p.id === projectId);
+        if (!project) return;
+        expandedProjectId = projectId;
+        document.getElementById('modal-project-meta').textContent = `${project.categoryLabel} · ${project.role}`;
+        document.getElementById('modal-project-title').textContent = project.name;
+        document.getElementById('modal-mockup-container').innerHTML = buildMockupFrame(project);
+        document.getElementById('modal-project-tagline').textContent = project.tagline;
+        document.getElementById('modal-visit-label').textContent = t.showcase.visitButton;
+        document.getElementById('modal-project-link').href = project.url;
+        document.getElementById('modal-close-btn').setAttribute('aria-label', t.showcase.closePreviewLabel);
+
+        const modal = document.getElementById('preview-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function closePreviewModal() {
+        expandedProjectId = null;
+        const modal = document.getElementById('preview-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      function render() {
+        const t = CONTENT[currentLocale];
+        document.documentElement.lang = currentLocale === 'pt' ? 'pt-BR' : currentLocale;
+        document.title = t.metaTitle;
+
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const val = getNested(t, el.getAttribute('data-i18n'));
+          if (typeof val === 'string') el.textContent = val;
+        });
+
+        document.querySelectorAll('.lang-btn').forEach((btn) => {
+          const active = btn.getAttribute('data-lang') === currentLocale;
+          btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+          btn.className = `lang-btn min-h-[32px] px-2.5 py-1 text-xs font-semibold tracking-wide rounded-md transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer ${
+            active ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-slate-100'
+          }`;
+        });
+
+        // Hero index
+        document.getElementById('hero-product-index').innerHTML = t.showcase.projects
+          .map(
+            (p) => `
+            <li>
+              <a href="#project-${p.id}" class="group flex items-center justify-between gap-3 py-3 text-sm transition-colors duration-150 hover:text-white rounded">
+                <div class="min-w-0">
+                  <span class="font-display font-semibold text-slate-100 group-hover:text-emerald-400 transition-colors">${p.name}</span>
+                  <span class="mx-2 text-slate-600" aria-hidden="true">·</span>
+                  <span class="text-xs text-slate-400">${p.categoryLabel}</span>
+                </div>
+                <span class="font-mono text-xs text-slate-400 group-hover:text-slate-200 whitespace-nowrap shrink-0 flex items-center gap-1">
+                  ${p.domain}
+                  <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-slate-500 group-hover:text-emerald-400 transition-colors" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 7h10v10" /><path d="M7 17 17 7" />
+                  </svg>
+                </span>
+              </a>
+            </li>`
+          )
+          .join('');
+
+        // KPIs
+        document.getElementById('hero-kpis').innerHTML = t.hero.kpis
+          .map(
+            (k) => `
+            <div class="bg-[#111827] px-5 py-5">
+              <p class="font-display text-2xl font-bold tracking-tight tabular-nums text-white sm:text-3xl">${k.value}</p>
+              <p class="mt-1 text-xs leading-snug text-slate-400 sm:text-sm">${k.label}</p>
+            </div>`
+          )
+          .join('');
+
+        // Competencies
+        document.getElementById('competencies-grid').innerHTML = t.summary.competencies
+          .map(
+            (c) => `
+            <div class="flex flex-col justify-between bg-[#111827] p-6">
+              <div>
+                <span class="font-mono text-xs font-medium tabular-nums text-emerald-400">${c.index}</span>
+                <h4 class="mt-2 font-display text-base font-semibold text-white">${c.title}</h4>
+                <p class="mt-2 text-sm leading-relaxed text-slate-400">${c.detail}</p>
+              </div>
+            </div>`
+          )
+          .join('');
+
+        // Category Filters
+        document.getElementById('category-filters').innerHTML = t.showcase.filters
+          .map((f) => {
+            const active = f.id === currentCategory;
+            return `<button type="button" role="tab" aria-selected="${active ? 'true' : 'false'}" data-filter="${f.id}" class="filter-btn min-h-[38px] rounded-md px-3.5 py-1.5 text-xs font-medium transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer ${
+              active ? 'bg-emerald-500 text-slate-950 font-semibold' : 'text-slate-300 hover:bg-white/[0.05] hover:text-white'
+            }">${f.label}</button>`;
+          })
+          .join('');
+
+        // Projects Showcase
+        const projects =
+          currentCategory === 'all'
+            ? t.showcase.projects
+            : t.showcase.projects.filter((p) => p.category === currentCategory);
+
+        document.getElementById('projects-grid').innerHTML = projects
+          .map((p, idx) => {
+            const isWide = projects.length % 2 === 1 && idx === projects.length - 1 && projects.length > 1;
+            const dotClass = p.accent === 'emerald' ? 'bg-emerald-400' : 'bg-blue-400';
+            const btnClass =
+              p.accent === 'emerald'
+                ? 'bg-emerald-500 text-slate-950 hover:bg-emerald-400'
+                : 'bg-blue-600 text-white hover:bg-blue-500';
+            return `
+            <article id="project-${p.id}" class="rounded-xl border border-white/[0.08] bg-[#111827] p-6 transition-colors duration-150 hover:border-white/[0.18] ${
+              isWide ? 'lg:col-span-2 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center' : 'flex flex-col justify-between gap-6'
+            }">
+              <div class="${isWide ? 'lg:col-span-6' : ''}">
+                <div class="group relative">
+                  ${buildMockupFrame(p)}
+                  <button
+                    type="button"
+                    data-expand="${p.id}"
+                    aria-label="${t.showcase.expandPreviewLabel}: ${p.name}"
+                    class="expand-btn absolute right-2.5 bottom-2.5 inline-flex h-8 w-8 items-center justify-center rounded-md border border-white/15 bg-[#090d16]/90 text-slate-300 opacity-90 transition-all duration-150 hover:border-emerald-400 hover:text-white cursor-pointer"
+                  >
+                    <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="15 3 21 3 21 9" /><polyline points="9 21 3 21 3 15" /><line x1="21" x2="14" y1="3" y2="10" /><line x1="3" x2="10" y1="21" y2="14" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex flex-col justify-between ${isWide ? 'lg:col-span-6' : 'flex-1'}">
+                <div>
+                  <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-400">
+                    <span class="font-medium text-emerald-400">${p.categoryLabel}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>${p.role}</span>
+                  </div>
+                  <div class="mt-2 flex items-baseline justify-between gap-4">
+                    <h3 class="font-display text-xl font-bold tracking-tight text-white sm:text-2xl">${p.name}</h3>
+                    <span class="font-mono text-xs text-slate-400">${p.domain}</span>
+                  </div>
+                  <p class="mt-2 text-sm font-medium leading-relaxed text-slate-200">${p.tagline}</p>
+
+                  <div class="mt-4 border-t border-white/[0.06] pt-4">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">${t.showcase.problemLabel}</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-slate-300">${p.problemSolved}</p>
+                  </div>
+
+                  <div class="mt-4">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">${t.showcase.deliverablesLabel}</p>
+                    <ul class="mt-2 grid grid-cols-1 gap-x-4 gap-y-1.5 text-xs text-slate-300 sm:grid-cols-2">
+                      ${p.deliverables
+                        .map(
+                          (d) =>
+                            `<li class="flex items-start gap-2"><span class="mt-1.5 h-1 w-1 shrink-0 rounded-full ${dotClass}" aria-hidden="true"></span><span>${d}</span></li>`
+                        )
+                        .join('')}
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex items-center justify-between border-t border-white/[0.06] pt-4">
+                  <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-lg px-4 py-2 text-xs font-semibold transition-colors duration-150 whitespace-nowrap shrink-0 ${btnClass}">
+                    <span>${t.showcase.visitButton}</span>
+                    <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    </svg>
+                  </a>
+                  <span class="font-mono text-xs text-slate-500 hidden sm:inline">${p.domain}</span>
+                </div>
+              </div>
+            </article>`;
+          })
+          .join('');
+
+        // Certifications
+        document.getElementById('certifications-list').innerHTML = t.certifications.items
+          .map((c, idx) => {
+            const isCopied = copiedCode === c.code;
+            return `
+            <div class="flex flex-col justify-between gap-4 px-5 py-5 sm:flex-row sm:items-center sm:px-6">
+              <div class="flex items-start gap-4">
+                <span class="mt-0.5 font-mono text-xs font-medium tabular-nums text-slate-500">0${idx + 1}</span>
+                <div>
+                  <h3 class="font-display text-sm font-semibold text-white sm:text-base">${c.title}</h3>
+                  <p class="mt-1 text-xs text-slate-400 sm:text-sm">
+                    <span class="font-medium text-slate-300">${c.issuer}</span>
+                    <span class="mx-2 text-slate-600" aria-hidden="true">·</span>
+                    <span>${c.focus}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 pl-7 sm:pl-0 shrink-0">
+                <div class="text-left sm:text-right">
+                  <span class="block text-[10px] uppercase tracking-wider text-slate-500">${t.certifications.codeLabel}</span>
+                  <span class="font-mono text-xs font-semibold tabular-nums tracking-wider text-emerald-400">${c.code}</span>
+                </div>
+                <button
+                  type="button"
+                  data-copy="${c.code}"
+                  aria-label="${t.certifications.copyLabel} ${c.code}"
+                  class="copy-btn inline-flex min-h-[36px] items-center gap-1.5 rounded-md border border-white/[0.1] bg-[#090d16] px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors duration-150 hover:border-white/25 hover:text-white cursor-pointer whitespace-nowrap shrink-0"
+                >
+                  ${
+                    isCopied
+                      ? `<svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="text-emerald-400">${t.certifications.copiedLabel}</span>`
+                      : `<svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><span>${t.certifications.copyLabel}</span>`
+                  }
+                </button>
+              </div>
+            </div>`;
+          })
+          .join('');
+
+        document.querySelectorAll('.filter-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            currentCategory = btn.getAttribute('data-filter');
+            render();
+          });
+        });
+
+        document.querySelectorAll('.expand-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            openPreviewModal(btn.getAttribute('data-expand'));
+          });
+        });
+
+        document.querySelectorAll('.copy-btn').forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            const code = btn.getAttribute('data-copy');
+            try {
+              await navigator.clipboard.writeText(code);
+            } catch {}
+            copiedCode = code;
+            render();
+            window.setTimeout(() => {
+              if (copiedCode === code) {
+                copiedCode = null;
+                render();
+              }
+            }, 2000);
+          });
+        });
+
+        if (expandedProjectId) {
+          openPreviewModal(expandedProjectId);
+        }
+
+        try {
+          if (window.lucide) {
+            window.lucide.createIcons();
+          }
+        } catch {}
+      }
+
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentLocale = btn.getAttribute('data-lang');
+          render();
+        });
+      });
+
+      document.getElementById('modal-close-btn').addEventListener('click', closePreviewModal);
+      document.getElementById('preview-modal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('preview-modal')) {
+          closePreviewModal();
+        }
+      });
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && expandedProjectId) {
+          closePreviewModal();
+        }
+      });
+
+      document.getElementById('year-span').textContent = new Date().getFullYear();
+      render();
+    </script>
   </body>
 </html>
-
